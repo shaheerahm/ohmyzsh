@@ -58,10 +58,7 @@ for st in status:
         else:
             # current and remote branch info
             branch, rest = st[2].strip().split('...')
-            if len(rest.split(' ')) == 1:
-                # remote_branch = rest.split(' ')[0]
-                pass
-            else:
+            if len(rest.split(' ')) != 1:
                 # ahead or behind
                 divergence = ' '.join(rest.split(' ')[1:])
                 divergence = divergence.lstrip('[').rstrip(']')
